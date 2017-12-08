@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul>
+    <li>제목 | 저자 | 날짜</li>
+
+  {% for article in articleList %}
+  {#    아티클 리스트를 받아서 필드를 하나하나씩 가져온다#}
+
+      <li><a href="/view/{{ article.id }}">{{ article.title }}</a> | {{ article.name }} | {{ article.cdate|date:"D d M Y" }}</li>
+{#      li태그로 지정해주니까 옆으로쫙 안붙고 한칸한칸씩 처리가 되네 오, 이거 뭐였더라 블락이엇나아무튼 하이퍼링크 이거 슬래시구조#}
+  {%  endfor %}
+  {#endfor %이거 %표시 위치 진짜 중요하다 씨데이트 뒤에 있는 거슨 필터다#}
+  </ul>
+</body>
+</html>

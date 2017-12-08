@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+{#        #공격으로 오인하지 않도록 토큰을 준다#}
+        <button type="submit" class="btn btn-primary">저장</button>
+    </form>
+hello django!
+</body>
+</html>

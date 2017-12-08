@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="userEL1454809" data-fcolor="black">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 search-box clearfix">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <select id="scate" class="form-control" name="scate" placeholder="Category">
+                            <option value="">카테고리</option>
+                        </select>
+                    </div>
+                    <div class="input-group-btn">
+                        <select id="sfl" class="form-control" name="sfl" placeholder="Search">
+                            <option value="all">모든내용검색</option>
+                            <option value="title">타이틀검색</option>
+                            <option value="content">내용검색</option>
+                            <option value="name">작성자로 찾기</option>
+                        </select>
+                    </div>
+                    <input type="text" id="stx" class="form-control" name="stx">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default search-btn"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 table-wrap clearfix">
+                <table class="table">
+                    <thead class="thead-top-line">
+                        <tr class="thead-bottom-line">
+                            <th class="tpl-forum-num">no.</th>
+                            <th class="tpl-forum-category">카테고리</th>
+                            <th class="tpl-forum-title">제목</th>
+                            <th class="tpl-forum-name">작성자</th>
+                            <th class="tpl-forum-date">날짜</th>
+                            <th class="tpl-forum-hit">view</th>
+                        </tr>
+                    </thead>
+                    <tbody data-loop="true" data-view="5">
+
+                        <tr>
+                            <td scope="row" class="tpl-forum-list-num"><i class="fa fa-volume-up"></i></td>
+                            <td class="tpl-forum-list-category">category</td>
+                            <td class="tpl-forum-list-content"><span class="tpl-forum-list-title">공지사항:케로로파티 구함</span> <i class="fa fa-comment tpl-forum-list-comment-icon"></i> <span class="tpl-forum-list-comment">100</span></td>
+                            <td class="tpl-forum-list-name">운영자</td>
+                            <td class="tpl-forum-list-date">2017.12.08</td>
+                            <td class="tpl-forum-list-hit">5k</td>
+                        </tr>
+                        <tr>
+                            {% for article in articleList %}
+                            <td scope="row" class="tpl-forum-list-num">7</td>
+                            <td class="tpl-forum-list-category">category</td>
+                            <td class="tpl-forum-list-content">{{ article.title }}</td>
+                            <td class="tpl-forum-list-name">{{ article.name }}</td>
+                            <td class="tpl-forum-list-date">{{ article.cdate|date:"D d M Y" }}</td>
+                            <td class="tpl-forum-list-hit">51</td
+                        </tr>
+                    </tbody>
+                    {%  endfor %}
+                </table>
+
+                <a href="{% url 'write' %}">글작성하기</a>
+            {# 버튼으로하지말고 유알엘로 따오는 것으로 만들자, 스트링타입 'write' 뒤에html은 생략하고, #}
+                <nav class="text-center">
+                    <ul class="pagination pagination-sm tpl-forum-pagination">
+                        <li><a href="#" data-label="prev"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" data-label="next"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{#  <ul>#}
+{#    <li>제목 | 저자 | 날짜</li>#}
+{##}
+{#  {% for article in articleList %}#}
+  {#    아티클 리스트를 받아서 필드를 하나하나씩 가져온다#}
+{##}
+{#      <li><a href="/view/{{ article.id }}">{{ article.title }}</a> | {{ article.name }} | {{ article.cdate|date:"D d M Y" }}</li>#}
+{#      li태그로 지정해주니까 옆으로쫙 안붙고 한칸한칸씩 처리가 되네 오, 이거 뭐였더라 블락이엇나아무튼 하이퍼링크 이거 슬래시구조#}
+{#  {%  endfor %}#}
+  {#endfor %이거 %표시 위치 진짜 중요하다 씨데이트 뒤에 있는 거슨 필터다#}
+{#  </ul>#}
+</body>
+</html>

@@ -26,7 +26,7 @@ SECRET_KEY = 'ceju)f7z$yx7j9+o@h8ywtkxw6m1r*!n1v2if^ckglq-2f^jnj'
 DEBUG = True
 #디버그 모드, 배포시 False로 만들어주어야 한다
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['210.89.181.183']
 
 
 # Application definition

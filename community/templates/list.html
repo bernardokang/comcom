@@ -59,7 +59,7 @@
                             {% for article in articleList %}
                             <td scope="row" class="tpl-forum-list-num">7</td>
                             <td class="tpl-forum-list-category">category</td>
-                            <td class="tpl-forum-list-content">{{ article.title }}</td>
+                            <td class="tpl-forum-list-content"><a href="/view/{{ article.id }}">{{ article.title }}</a></td>
                             <td class="tpl-forum-list-name">{{ article.name }}</td>
                             <td class="tpl-forum-list-date">{{ article.cdate|date:"D d M Y" }}</td>
                             <td class="tpl-forum-list-hit">51</td
